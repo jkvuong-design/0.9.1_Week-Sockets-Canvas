@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+  <link href="style.css" rel="stylesheet" />
+  <title>Collab Drawing Canvas</title>
+</head>
+
+<body>
+
+  <!-- Floating UI Toolbar -->
+  <div id="toolbar">
+    <!-- Custom Username Input -->
+    <input 
+      type="text" 
+      id="name-input" 
+      placeholder="Enter your name..." 
+      maxlength="15"
+      oninput="updateUsername(this.value)"
+    />
+
+    <!-- 5 Color Selection Buttons -->
+    <div class="color-picker">
+      <button class="btn color-btn red" onclick="setColor('#FF4B4B')">Red</button>
+      <button class="btn color-btn yellow" onclick="setColor('#FFD166')">Yellow</button>
+      <button class="btn color-btn blue" onclick="setColor('#3B82F6')">Blue</button>
+      <button class="btn color-btn green" onclick="setColor('#10B981')">Green</button>
+      <button class="btn color-btn purple" onclick="setColor('#8B5CF6')">Purple</button>
+    </div>
+
+    <!-- Export Button -->
+    <button class="btn export-btn" onclick="exportImage()">💾 Save Your Drawing!</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
